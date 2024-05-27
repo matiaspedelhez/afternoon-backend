@@ -1,12 +1,4 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Patch,
-  Param,
-  Delete,
-} from "@nestjs/common";
+import { Controller, Get, Param } from "@nestjs/common";
 import { RetailService } from "./retail.service";
 import { Retail } from "./entities/retail.entity";
 
@@ -19,8 +11,20 @@ export class RetailController {
     return this.retailService.findAll();
   }
 
-  @Get(":handle")
-  async findOne(@Param("handle") handle: string): Promise<Retail | undefined> {
+  @Get("handles")
+  async findAllHandles(): Promise<String[]> {
+    return this.retailService.findAllHandles();
+  }
+
+  @Get("handle/:handle")
+  async findOneByHandle(
+    @Param("handle") handle: string
+  ): Promise<Retail | undefined> {
     return this.retailService.findOneByHandle(handle);
+  }
+
+  @Get("id/:id")
+  async findOneByID(@Param("id") id: string): Promise<Retail | undefined> {
+    return this.retailService.findOneByID(id);
   }
 }

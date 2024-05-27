@@ -14,7 +14,16 @@ export class RetailService {
     return this.retailRepository.find();
   }
 
+  async findAllHandles(): Promise<string[]> {
+    const retails = this.retailRepository.find({ select: ["handle"] });
+    return (await retails).map((retail) => retail.handle);
+  }
+
   async findOneByHandle(handle: string): Promise<Retail | undefined> {
     return this.retailRepository.findOne({ where: { handle } });
+  }
+
+  async findOneByID(id: string): Promise<Retail | undefined> {
+    return this.retailRepository.findOne({ where: { id } });
   }
 }
