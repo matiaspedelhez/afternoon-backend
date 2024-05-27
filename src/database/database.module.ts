@@ -17,7 +17,7 @@ import { Retail } from "src/retail/entities/retail.entity";
         database: configService.get<string>("POSTGRES_DATABASE"),
         ssl: true,
         entities: [Retail],
-        synchronize: true,
+        synchronize: false,
       }),
     }),
   ],
