@@ -1,10 +1,18 @@
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { Module } from "@nestjs/common";
+import { TypeOrmModule } from "@nestjs/typeorm";
+import { ConfigModule } from "@nestjs/config";
+import { existsSync } from "fs";
+import { DatabaseModule } from "./database/database.module";
+import { RetailModule } from './retail/retail.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    ConfigModule.forRoot({
+      ignoreEnvFile: existsSync("/.env"),
+      envFilePath: ".env",
+    }),
+    DatabaseModule,
+    RetailModule,
+  ],
 })
 export class AppModule {}
