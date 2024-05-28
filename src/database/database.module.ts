@@ -17,7 +17,7 @@ import { Product } from "src/product/entities/product.entity";
         database: configService.get<string>("POSTGRES_DATABASE"),
         ssl: true,
         entities: [Product],
-        synchronize: true,
+        synchronize: false,
       }),
     }),
   ],
