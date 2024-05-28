@@ -24,6 +24,12 @@ export class ProductController {
     return this.productService.findAll();
   }
 
+  @Get("handles")
+  @UsePipes(new ValidateTypePipe())
+  async findAllHandles(@Query() query): Promise<String[]> {
+    return this.productService.findAllHandles(query.type);
+  }
+
   @Get("handle/:handle")
   async findOneByHandle(
     @Param("handle") handle: string
@@ -36,11 +42,5 @@ export class ProductController {
     @Param("id", new ParseUUIDPipe()) id: string
   ): Promise<Product | undefined> {
     return this.productService.findOneByID(id);
-  }
-
-  @Get("handles")
-  @UsePipes(new ValidateTypePipe())
-  async findAllHandles(@Query() query): Promise<String[]> {
-    return this.productService.findAllHandles(query.type);
   }
 }

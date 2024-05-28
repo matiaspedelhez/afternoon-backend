@@ -1,7 +1,6 @@
 import { Module } from "@nestjs/common";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { ConfigModule, ConfigService } from "@nestjs/config";
-import { Retail } from "src/retail/entities/retail.entity";
 import { Product } from "src/product/entities/product.entity";
 
 @Module({
@@ -17,7 +16,7 @@ import { Product } from "src/product/entities/product.entity";
         password: configService.get<string>("POSTGRES_PASSWORD"),
         database: configService.get<string>("POSTGRES_DATABASE"),
         ssl: true,
-        entities: [Retail, Product],
+        entities: [Product],
         synchronize: true,
       }),
     }),
