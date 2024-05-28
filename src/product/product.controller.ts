@@ -8,7 +8,7 @@ import {
 } from "@nestjs/common";
 import { ProductService } from "./product.service";
 import { Product } from "./entities/product.entity";
-import { ValidateTypePipe } from "src/validate-type-pipe/validate-type-pipe.pipe";
+import { ValidateTypePipe } from "../validate-type-pipe/validate-type-pipe.pipe";
 
 @Controller("product")
 export class ProductController {
