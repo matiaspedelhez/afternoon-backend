@@ -8,10 +8,11 @@ RESTful API for [Afternoon Roastery](https://afternoon.com.ar) coffee roasters.
 
 ## Endpoins
 
-- `GET /retail`: Retrieve all store-items.
-- `GET /retail/handles`: Retrieve all handles.
-- `GET /retail/handle/:handle`: Retrieve a specific item by its handle.
-- `GET /retail/id/:id`: Retrieve a specific item by its ID.
+- `GET /product`: Retrieve all store-items.
+- `GET /product?type=(wholesale | retail)`: Retrieve all products from wholesale or retail store.
+- `GET /product/handles?type=(wholesale | retail)`: Retrieve all handles from wholesale or retail store.
+- `GET /product/handle/:handle`: Retrieve a specific item by its handle.
+- `GET /product/id/:id`: Retrieve a specific item by its ID.
 
 ## Installation
 
