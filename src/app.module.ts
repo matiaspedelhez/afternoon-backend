@@ -4,6 +4,7 @@ import { ConfigModule } from "@nestjs/config";
 import { existsSync } from "fs";
 import { DatabaseModule } from "./database/database.module";
 import { RetailModule } from './retail/retail.module';
+import { ProductModule } from './product/product.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { RetailModule } from './retail/retail.module';
     }),
     DatabaseModule,
     RetailModule,
+    ProductModule,
   ],
 })
 export class AppModule {}
