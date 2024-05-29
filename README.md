@@ -4,7 +4,7 @@
 
 ## Description
 
-RESTful API for [Afternoon Roastery](https://afternoon.com.ar) coffee roasters.
+RESTful API for [Afternoon Roastery](https://afternoon.com.ar).
 
 ## Endpoins
 
